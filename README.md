@@ -5,14 +5,14 @@ This is the pytorch implementation of paper "Semi-supervised Medical Image Segme
 
 Email addresses: tangcheng1@stu.scu.edu.cn & perperstudy@gmail.com (Joint First Authors) & wangyanscu@hotmail.com (Corresponding Author)
 
-##Setup
-###Environment
+## Setup
+### Environment
 ```
 python=3.7.10
 torch==1.8.1
 torchvision=0.9.1
 ```
-###Dataset
+### Dataset
 We will take the [Hippocampus dataset](https://drive.google.com/file/d/1RzPB1_bqzQhlWvU-YGvZzhx2omcDh38C/view?usp=sharing)
  as the example to illustrate how 
 to do the preprocessing. Put the images .nii.gz files in ./data/Hippocampus/imgs folder and labels files in 
@@ -25,7 +25,7 @@ python create_splits.py
 
 Afterwards, the images and their respective labels will be combined and saved in a .npy file. The shape of the images will be normalized to match the target size.
 
-##Run the codes
+## Run the codes
 To run the Stage I: Unsupervised Image-level Contrastive Learning,
 ```
 bash run_simclr.sh
