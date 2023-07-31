@@ -1,0 +1,6 @@
+tensorboard
+torch
+torchvision
+trixi
+batchgenerators==0.18.1
+numpy
