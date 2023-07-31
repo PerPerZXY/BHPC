@@ -13,10 +13,7 @@ torch==1.8.1
 torchvision=0.9.1
 ```
 ### Dataset
-We will take the [Hippocampus dataset](https://drive.google.com/file/d/1RzPB1_bqzQhlWvU-YGvZzhx2omcDh38C/view?usp=sharing)
- as the example to illustrate how 
-to do the preprocessing. Put the images .nii.gz files in ./data/Hippocampus/imgs folder and labels files in 
-./data/Hippocampus/labels.
+We will take the [Hippocampus dataset](https://drive.google.com/file/d/1RzPB1_bqzQhlWvU-YGvZzhx2omcDh38C/view?usp=sharing) as the example to illustrate how to do the preprocessing. Put the images .nii.gz files in ./data/Hippocampus/imgs folder and labels files in ./data/Hippocampus/labels.
 ```
 cd dataset/prepare_dataset
 python preprcocessing.py
@@ -34,12 +31,13 @@ To run the Stage II: Supervised Pixel-level Contrastive Learning,
 ```
 bash run_coseg.sh
 ```
-To combine the above two pretraining, run run_simclr.sh first and the pretrained model will be saved at save/simclr/Hippocampus/ and set --pretrained_model_path  ${the saved model path} in run_coseg.sh.
+To combine the above two pretraining, run run_simclr.sh first and the pretrained model will be saved at save/simclr/Hippocampus/ and set --pretrained_model_path  ${the saved model path} in run_coseg.sh. Remember to load the saved pre-trained model.
 
-As for the Stage III: (Semi-supervised Segmentation ), remember to load the saved pre-trained model,
+To run the Stage III: (Semi-supervised Segmentation),
 ```
 bash run_seg.sh
 ```
 
-Notice that in all the above three files, there is a parameter named train_sample, which means the percentage of labeled data to use. 
+## Important Notes
+* In all of the aforementioned three files, "train_sample" denotes the percentage of labeled data to be utilized.
 
