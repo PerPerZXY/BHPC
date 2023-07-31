@@ -1,6 +1,7 @@
 # Semi-supervised Medical Image Segmentation via Hard Positives oriented Contrastive Learning
 This is the pytorch implementation of paper "Semi-supervised Medical Image Segmentation via Hard Positives oriented Contrastive Learning".
 ![workflow of our methods](./overview.png)
+Email addresses: tangcheng1@stu.scu.edu.cn & perperstudy@gmail.com (Joint First Authors) & wangyanscu@hotmail.com (Corresponding Author)
 
 ##Setup
 ###Environment
