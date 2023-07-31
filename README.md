@@ -22,25 +22,24 @@ cd dataset/prepare_dataset
 python preprcocessing.py
 python create_splits.py
 ```
-After which,the images and labels will be restored together in .npy file with shape normalized to target size.
+
+Afterwards, the images and their respective labels will be combined and saved in a .npy file. The shape of the images will be normalized to match the target size.
 
 ##Run the codes
-To run the Stage one: Unsupervised Image-level Contrastive Learning,
+To run the Stage I: Unsupervised Image-level Contrastive Learning,
 ```
 bash run_simclr.sh
 ```
-To run the Stage two:Supervised Pixel-level Contrastive Learning,
+To run the Stage II: Supervised Pixel-level Contrastive Learning,
 ```
 bash run_coseg.sh
 ```
-To combine the above two pretraining, run run_simclr.sh first and the pretrained model will be saved at 
-save/simclr/Hippocampus/ and set --pretrained_model_path  ${the saved model path} in run_coseg.sh.
+To combine the above two pretraining, run run_simclr.sh first and the pretrained model will be saved at save/simclr/Hippocampus/ and set --pretrained_model_path  ${the saved model path} in run_coseg.sh.
 
-As for the Stage three(Semi-supervised Segmentation ), remember to load the saved model, and
+As for the Stage III: (Semi-supervised Segmentation ), remember to load the saved pre-trained model,
 ```
 bash run_seg.sh
 ```
 
-Notice that in all the above three files, there is a parameter named train_sample, which means the percentage of labeled 
-data to use. 
+Notice that in all the above three files, there is a parameter named train_sample, which means the percentage of labeled data to use. 
 
