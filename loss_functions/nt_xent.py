@@ -56,11 +56,8 @@ class NTXentLoss(torch.nn.Module):
         positives = torch.cat([l_pos, r_pos]).view(2 * batch_size, 1)
 
         negatives = similarity_matrix[mask_samples_from_same_repr].view(2 * batch_size, -1)
-        #weight hard positive strategy
-        # the stretdgy
-        # weight ==1
-        # weight =1
-        # weight = -self.beta * positives
+        # weight hard positive strategy
+        weight = -self.beta * positives
         logits = torch.cat((weight+positives, negatives), dim=1)
         logits /= self.temperature
 
